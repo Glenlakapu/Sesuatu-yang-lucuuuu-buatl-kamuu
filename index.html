@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Rahasia Glenn untuk Ayu</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff5f7;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .letter {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            border: 2px dashed #ff85a2;
+            margin-bottom: 20px;
+            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDFtY2V0dGJ6eW1yY3FhZ3VjZ2V6Y2JtYzZ4bmNqYzB1bmR5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTskHEUdgCQAXde/giphy.gif');
+            background-size: 100px;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-blend-mode: overlay;
+        }
+        h1 {
+            color: #ff2d75;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .highlight {
+            background-color: #fff0f5;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+        .telegram-theme {
+            color: #0088cc;
+            font-weight: bold;
+        }
+        button {
+            background-color: #ff2d75;
+            color: white;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        }
+        #rejectBtn {
+            background-color: #f8f8f8;
+            color: #ff2d75;
+            border: 2px solid #ff2d75;
+        }
+        #result {
+            font-size: 20px;
+            margin: 20px 0;
+            min-height: 60px;
+            color: #ff2d75;
+            font-weight: bold;
+        }
+        .sticker {
+            width: 100px;
+            position: absolute;
+            right: 20px;
+            top: -15px;
+            transform: rotate(15deg);
+        }
+        .leomatch-logo {
+            width: 20px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW0xN3ZqZ2RqYzFmOGV6Z3R4N2VtYzV5dWZ6bWw2eHZtY3BvaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o85xIO33l7RlmLR4I/giphy.gif" class="sticker" alt="Sticker">
+
+    <div class="letter">
+        <h1>💌 SURAT DARI GLENN UNTUK AYU</h1>
+        
+        <p>Hai <span class="highlight">Ayu</span>,</p>
+        
+        <p>Kalau ada <span class="telegram-theme">aplikasi kencan</span> yang paling aku syukuri, itu pasti <strong>Leomatch</strong> <img src="https://telegram.org/img/t_logo.png" class="leomatch-logo" alt="Leomatch">. Soalnya lewat situ aku bisa kenal sama kamu!</p>
+        
+        <p>Awalnya cuma iseng swipe, eh taunya... <em>"Loh kok ada yang bikin jantung deg-degan?"</em> 😳</p>
+        
+        <p>Nggak nyangka obrolan kita di Telegram bisa semenyenangkan ini. Dari bahas <span class="highlight">hobi sampe mimpi</span>, dari kirim <span class="highlight">sticker anjing lucu</span> sampe <span class="highlight">nobar(walau ga jadi jadi)</span>...</p>
+        
+        <p>Jujur, aku pengen <span class="highlight">"upgrade"</span> hubungan kita. Bukan cuma jadi <em>best friend di Telegram</em>, tapi...</p>
+        
+        <p style="text-align: center; font-size: 20px; color: #ff2d75;">
+            <strong>MAU NGAK JADI PACAR AKU?</strong>
+        </p>
+        
+        <div style="text-align: center;">
+            <button id="terimaBtn">MAU BANGET! 💖</button>
+            <button id="rejectBtn">NANTI DULU...</button>
+        </div>
+        
+        <div id="result"></div>
+        
+        <p style="text-align: center;"><small>*Kalau kamu pencet "Mau Banget", kita bisa mulai petualangan baru! 🚀</small></p>
+        
+        <div style="margin-top: 30px; border-top: 1px dashed #ff85a2; padding-top: 15px;">
+            <p>Yang selalu senang dapat chat darimu,<br>
+            <strong>Glenn</strong></p>
+            <p><small>PS: Kalo kamu tolak, aku akan kirim 100 sticker sedih ke Whatsapp kamu! 😭</small></p>
+        </div>
+    </div>
+
+    <script>
+        // Animasi tombol
+        document.getElementById('terimaBtn').addEventListener('mouseover', function() {
+            this.innerHTML = "YAKIN MAU? 😍";
+        });
+        document.getElementById('terimaBtn').addEventListener('mouseout', function() {
+            this.innerHTML = "MAU BANGET! 💖";
+        });
+        
+        // Efek ketika dipencet
+        let tekanCount = 0;
+        const alasanNanti = [
+            "Aku masih siapin mental...",
+            "Kita kenalannya belum lama...",
+            "Aku takut nanti Glenn bosen :(",
+            "Boleh aku pikirkan dulu? 🥺"
+        ];
+        
+        document.getElementById('rejectBtn').addEventListener('click', function() {
+            tekanCount++;
+            
+            if(tekanCount < 4) {
+                document.getElementById('result').innerHTML = `😢 "${alasanNanti[tekanCount-1]}"`;
+                this.innerHTML = `NANTI... (${tekanCount}x)`;
+                
+                // Animasi tombol kabur
+                this.style.transform = `translate(${Math.random()*20-10}px, ${Math.random()*20-10}px)`;
+            } else {
+                document.getElementById('result').innerHTML = "TAPI BOLEH TANYA LAGI BESOK KAN? 🥺";
+                this.style.display = "none";
+                document.getElementById('terimaBtn').style.fontSize = "20px";
+                document.getElementById('terimaBtn').style.padding = "15px 30px";
+            }
+        });
+        
+        // Ketika diterima
+        document.getElementById('terimaBtn').addEventListener('click', function() {
+            document.getElementById('result').innerHTML = "YEAY! SEKARANG KITA RESMI PACARAN! 🎉<br>Aku janji bakal jadi pacar yang menyenangkan!";
+            document.querySelector('.letter').style.backgroundImage = "url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDFtY2V0dGJ6eW1yY3FhZ3VjZ2V6Y2JtYzZ4bmNqYzB1bmR5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTskHEUdgCQAXde/giphy.gif')";
+            
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.style.display = "none";
+            });
+            
+            // Buat efek confetti virtual
+            const confetti = document.createElement('div');
+            confetti.innerHTML = "🎊🎉✨";
+            confetti.style.fontSize = "30px";
+            confetti.style.animation = "fall 3s linear forwards";
+            document.body.appendChild(confetti);
+            
+            // Style untuk confetti
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fall {
+                    to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
